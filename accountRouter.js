@@ -68,7 +68,7 @@ router.delete("/:id", (req, res) => {
     .del()
     .where({ id })
     .then((count) => {
-      res.status(204).json(count);
+      res.status(204).json({ message: "Successfully deleted account!", count });
     })
     .catch((err) => {
       res.status(500).json({ message: "Failed to delete account!", err });
